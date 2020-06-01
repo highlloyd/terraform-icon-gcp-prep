@@ -35,13 +35,11 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-|  |  | `string` |  | no |
 | create | Boolean to make module or not | `bool` | `true` | no |
 | create\_eip | Boolean to create elastic IP | `bool` | `false` | no |
 | environment | The environment | `string` | `""` | no |
 | instance\_type | Instance type | `string` | `"n1-standard-1"` | no |
 | key\_name | The name of the preexisting key to be used instead of the local public\_key\_path | `string` | `""` | no |
-| logging\_filter | String for polkadot logging filter | `string` | `"sync=trace,afg=trace,babe=debug"` | no |
 | namespace | The namespace to deploy into | `string` | `""` | no |
 | network\_name | The network name, ie kusama / mainnet | `string` | `""` | no |
 | private\_key\_path | The path to the private ssh key | `string` | `""` | no |
