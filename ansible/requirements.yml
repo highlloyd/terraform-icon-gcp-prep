@@ -1,0 +1,8 @@
+---
+
+- src: dev-sec.os-hardening
+  version: 5.2.1
+- src: dev-sec.ssh-hardening
+  version: 7.0.0
+- src: insight_icon.icon_prep
+- src: insight_infra.cloud_helper

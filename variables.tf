@@ -4,15 +4,49 @@ variable "create" {
   default     = true
 }
 
+########
+# Label
+########
+variable "id" {
+  description = "The id of the deployment"
+  type        = string
+  default     = ""
+}
+
 variable "tags" {
-  description = "Map of tags"
+  description = "List of tags"
+  type        = list(string)
+  default     = []
+}
+
+variable "labels" {
+  description = "Map of labels"
   type        = map(string)
   default     = {}
 }
 
+variable "name" {
+  description = "Name of the resources"
+  type        = string
+  default     = ""
+}
+
+variable "network_name" {
+  description = "The network name, ie kusama / mainnet"
+  type        = string
+  default     = "testnet"
+}
+
+
 ###################
 # NETWORK VARIABLES
 ###################
+variable "public_ip" {
+  description = "The public IP, leave blank to query IP from name (bucket name by default in registration)"
+  type        = string
+  default     = ""
+}
+
 variable "public_subnet_id" {
   description = "The id of the public subnet"
   type        = string
@@ -35,6 +69,12 @@ variable "node_name" {
   description = "Name of the node"
   type        = string
   default     = ""
+}
+
+variable "zone" {
+  description = "The GCP zone to deploy in"
+  type        = string
+  default     = "us-east1-b"
 }
 
 variable "monitoring" {
@@ -73,8 +113,36 @@ variable "key_name" {
   default     = ""
 }
 
+#########
+# Ansible
+#########
 variable "private_key_path" {
   description = "The path to the private ssh key"
   type        = string
   default     = ""
 }
+
+variable "ansible_hardening" {
+  description = "Run hardening roles"
+  type        = bool
+  default     = false
+}
+
+variable "playbook_vars" {
+  description = "Additional playbook vars"
+  type        = map(string)
+  default     = {}
+}
+
+variable "keystore_path" {
+  description = "The path to the keystore"
+  type        = string
+  default     = ""
+}
+
+variable "keystore_password" {
+  description = "The password to the keystore"
+  type        = string
+  default     = ""
+}
+
