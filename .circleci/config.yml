@@ -15,7 +15,6 @@ jobs:
               curl -s https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-287.0.0-linux-x86_64.tar.gz | tar xz
               echo 'source ~/google-cloud-sdk/path.bash.inc' >> $BASH_ENV
             }
-
             if grep 'docker\|lxc' /proc/1/cgroup > /dev/null 2>&1; then
               if [[ $(command -v gcloud) == "" ]]; then
                 install
