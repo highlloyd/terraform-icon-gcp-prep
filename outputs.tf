@@ -11,13 +11,17 @@ output "security_group_id" {
 }
 
 output "instance_id" {
-  value = google_compute_instance.this[0].self_link
+  value = join("", google_compute_instance.this.*.self_link)
 }
 
 output "public_ip" {
-  value = google_compute_address.this[0].address
+  value = var.public_ip
 }
 
 output "private_ip" {
-  value = google_compute_instance.this[0].network_interface.1.network_ip
+  value = join("", google_compute_instance.this.*.network_interface.1.network_ip)
+}
+
+output "user_data" {
+  value = module.user_data.user_data
 }

@@ -21,34 +21,39 @@ module "this" {
 No issue is creating limit on this module.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Requirements
-
-No requirements.
-
 ## Providers
 
 | Name | Version |
 |------|---------|
 | google | n/a |
+| random | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+|------|-------------|------|---------|:-----:|
+| ansible\_hardening | Run hardening roles | `bool` | `false` | no |
 | create | Boolean to make module or not | `bool` | `true` | no |
 | create\_eip | Boolean to create elastic IP | `bool` | `false` | no |
-| environment | The environment | `string` | `""` | no |
+| id | The id of the deployment | `string` | `""` | no |
 | instance\_type | Instance type | `string` | `"n1-standard-1"` | no |
 | key\_name | The name of the preexisting key to be used instead of the local public\_key\_path | `string` | `""` | no |
-| namespace | The namespace to deploy into | `string` | `""` | no |
-| network\_name | The network name, ie kusama / mainnet | `string` | `""` | no |
+| keystore\_password | The password to the keystore | `string` | `""` | no |
+| keystore\_path | The path to the keystore | `string` | `""` | no |
+| labels | Map of labels | `map(string)` | `{}` | no |
+| monitoring | Boolean for cloudwatch | `bool` | `false` | no |
+| name | Name of the resources | `string` | `""` | no |
+| network\_name | The network name, ie kusama / mainnet | `string` | `"testnet"` | no |
+| node\_name | Name of the node | `string` | `""` | no |
+| playbook\_vars | Additional playbook vars | `map(string)` | `{}` | no |
 | private\_key\_path | The path to the private ssh key | `string` | `""` | no |
 | private\_subnet\_id | The id of the private subnet | `string` | n/a | yes |
+| public\_ip | The public IP, leave blank to query IP from name (bucket name by default in registration) | `string` | `""` | no |
 | public\_key\_path | The path to the public ssh key | `string` | `""` | no |
 | public\_subnet\_id | The id of the public subnet | `string` | n/a | yes |
 | root\_volume\_size | Root volume size | `string` | `0` | no |
 | security\_group\_id | The id of the security group to run in | `string` | n/a | yes |
-| stage | The stage of the deployment | `string` | `""` | no |
+| tags | List of tags | `list(string)` | `[]` | no |
 | zone | The GCP zone to deploy in | `string` | `"us-east1-b"` | no |
 
 ## Outputs
