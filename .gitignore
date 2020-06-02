@@ -27,3 +27,13 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+
+.terragrunt-cache
+
+test/fixtures/keys/*
+!test/fixtures/keys/.gitkeep
+
+!ansible/roles/volumes
+ansible/roles/icon-prep/
+
+.tmp
